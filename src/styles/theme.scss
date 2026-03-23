@@ -1,0 +1,68 @@
+// ==========================================
+// THEME — EDENFIT  |  Logo palette
+// #FF1493 neon magenta · #C2185B fuchsia
+// #0A0A0A bg · #1C1C1C card · #FFE4F0 glow
+// ==========================================
+
+@mixin theme-dark {
+  --color-text-primary:   #FFFFFF;
+  --color-text-secondary: #CFCFCF;
+  --color-text-tertiary:  #8A8A8A;
+  --color-bg-primary:     #0A0A0A;
+  --color-bg-secondary:   #1C1C1C;
+  --color-bg-tertiary:    #272727;
+  --color-border:         #2a2a2a;
+  --color-accent:         #FF1493;
+  --color-accent-dark:    #C2185B;
+  --color-accent-glow:    #FFE4F0;
+}
+
+@mixin theme-light {
+  --color-text-primary:   #0A0A0A;
+  --color-text-secondary: #333333;
+  --color-text-tertiary:  #666666;
+  --color-bg-primary:     #FFFFFF;
+  --color-bg-secondary:   #FFF0F6;
+  --color-bg-tertiary:    #FFE4F0;
+  --color-border:         #FFCCE0;
+  --color-accent:         #FF1493;
+  --color-accent-dark:    #C2185B;
+  --color-accent-glow:    #FFE4F0;
+}
+
+// ── Component tokens ─────────────────────
+$btn-primary-bg:      #FF1493;
+$btn-primary-text:    #FFFFFF;
+$btn-primary-hover:   #C2185B;
+$btn-primary-active:  #9C1448;
+
+$btn-secondary-bg:    #1C1C1C;
+$btn-secondary-text:  #FF1493;
+$btn-secondary-hover: #272727;
+
+$btn-disabled-opacity: 0.5;
+
+$input-border-color:       #2a2a2a;
+$input-border-color-focus: #FF1493;
+$input-bg:                 #1C1C1C;
+$input-bg-disabled:        #0A0A0A;
+$input-text-color:         #FFFFFF;
+$input-placeholder-color:  #8A8A8A;
+$input-error-color:        #dc2626;
+
+$form-spacing: $space-md;
+
+$table-header-bg:     #272727;
+$table-border-color:  #2a2a2a;
+$table-row-hover-bg:  rgba(#FF1493, 0.08);
+$table-striped-bg:    #1C1C1C;
+
+$modal-overlay-bg: rgba(#000000, 0.75);
+$modal-bg:         #1C1C1C;
+$modal-shadow:     0 20px 25px -5px rgba(0, 0, 0, 0.5);
+
+// ── Animation curves ─────────────────────
+$ease-in:     cubic-bezier(0.4, 0, 1, 1);
+$ease-out:    cubic-bezier(0, 0, 0.2, 1);
+$ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+$ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);

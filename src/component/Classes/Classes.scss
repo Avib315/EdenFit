@@ -1,0 +1,228 @@
+// ==========================================
+// CLASSES SECTION - EDENFIT
+// ==========================================
+
+.classes {
+  background: var(--color-bg-primary, #0A0A0A);
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 300ms ease;
+
+  body.light-mode & { background: #fff0f6; }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -15%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 20, 147, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+}
+
+.classes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+
+  h2 {
+    font-size: 44px;
+    font-weight: 800;
+    margin: 0 0 14px 0;
+    background: linear-gradient(135deg, #FF1493 0%, #FFE4F0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    body.light-mode & {
+      background: linear-gradient(135deg, #FF1493 0%, #C2185B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  p {
+    font-size: 17px;
+    color: var(--color-text-secondary, #CFCFCF);
+    margin: 0 auto;
+    max-width: 480px;
+    line-height: 1.6;
+  }
+}
+
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+// ── Card ──────────────────────────────────
+.class-card {
+  background: var(--color-bg-secondary, #1C1C1C);
+  border: 1px solid rgba(255, 20, 147, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 320ms ease, border-color 320ms ease, box-shadow 320ms ease;
+  display: flex;
+  flex-direction: column;
+
+  body.light-mode & {
+    background: #FFFFFF;
+    border-color: rgba(255, 20, 147, 0.15);
+    box-shadow: 0 2px 16px rgba(255, 20, 147, 0.06);
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: #FF1493;
+    box-shadow: 0 20px 50px rgba(255, 20, 147, 0.22), 0 0 0 1px rgba(255, 20, 147, 0.15);
+
+    .class-card-image img {
+      transform: scale(1.07);
+    }
+
+    .class-btn {
+      background: linear-gradient(135deg, #C2185B 0%, #9C1448 100%);
+      box-shadow: 0 6px 20px rgba(255, 20, 147, 0.4);
+    }
+  }
+}
+
+// ── Card image ────────────────────────────
+.class-card-image {
+  position: relative;
+  // aspect-ratio keeps proportions regardless of card width
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // 20% from top shows upper-body / face for most portrait shots
+    object-position: center 20%;
+    display: block;
+    transition: transform 500ms ease;
+  }
+
+  // gradient from transparent to card bg so text blends
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 45%,
+      rgba(10, 10, 10, 0.65) 100%
+    );
+
+    body.light-mode & {
+      background: linear-gradient(
+        to bottom,
+        transparent 45%,
+        rgba(0, 0, 0, 0.35) 100%
+      );
+    }
+  }
+}
+
+// ── Card body ─────────────────────────────
+.class-card-body {
+  padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--color-text-primary, #FFFFFF);
+    margin: 0 0 8px 0;
+
+    body.light-mode & { color: #0A0A0A; }
+  }
+
+  .class-description {
+    font-size: 14px;
+    color: var(--color-text-secondary, #CFCFCF);
+    line-height: 1.6;
+    margin: 0 0 14px 0;
+    flex: 1;
+
+    body.light-mode & { color: #555; }
+  }
+
+  .class-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+
+    span {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #FF1493;
+      background: rgba(255, 20, 147, 0.1);
+      border: 1px solid rgba(255, 20, 147, 0.25);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+  }
+
+  .class-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #FF1493 0%, #C2185B 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 300ms ease;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 14px rgba(255, 20, 147, 0.3);
+
+    &:active { transform: scale(0.97); }
+  }
+}
+
+// ==========================================
+// RESPONSIVE
+// ==========================================
+
+@media (max-width: 768px) {
+  .classes { padding: 60px 16px; }
+
+  .section-header {
+    margin-bottom: 36px;
+    h2 { font-size: 32px; }
+    p  { font-size: 15px; }
+  }
+
+  .classes-grid { gap: 16px; }
+}
+
+@media (max-width: 480px) {
+  .classes { padding: 48px 12px; }
+
+  .classes-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .section-header h2 { font-size: 26px; }
+}

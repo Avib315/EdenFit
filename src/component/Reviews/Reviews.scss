@@ -1,0 +1,327 @@
+// ==========================================
+// REVIEWS - WHATSAPP STYLE
+// ==========================================
+
+.reviews-section {
+  background: var(--color-bg-primary, #0D0D0D);
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 300ms ease;
+
+  body.light-mode & {
+    background: #f0f2f5;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 20, 147, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+}
+
+.reviews-container {
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.reviews-heading {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FF1493 0%, #FFFFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 8px 0;
+
+    body.light-mode & {
+      background: linear-gradient(135deg, #FF1493 0%, #1a1a2e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  p {
+    color: var(--color-text-secondary, #CFCFCF);
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+// ── Phone shell ──
+.whatsapp-phone {
+  background: #0b1114;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  height: 620px;
+  max-height: 80vh;
+
+  body.light-mode & {
+    background: #e5ddd5;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// ── Status bar ──
+.wa-status-bar {
+  background: #1f2c34;
+  padding: 6px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+
+  body.light-mode & {
+    background: #075e54;
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+// ── Chat header ──
+.wa-header {
+  background: #1f2c34;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  body.light-mode & {
+    background: #075e54;
+  }
+}
+
+.wa-back {
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  line-height: 1;
+  padding-inline-end: 4px;
+}
+
+.wa-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: #fff;
+  padding: 3px;
+  flex-shrink: 0;
+}
+
+.wa-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.wa-contact-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.wa-contact-status {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 200ms ease;
+}
+
+// ── Messages body ──
+.wa-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #0b1114;
+  scroll-behavior: smooth;
+
+  body.light-mode & {
+    background: #e5ddd5;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  &::-webkit-scrollbar { width: 4px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+}
+
+.wa-date-badge {
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 3px 10px;
+  margin: 4px auto 8px;
+  width: fit-content;
+
+  body.light-mode & {
+    color: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.08);
+  }
+}
+
+// ── Received message bubble ──
+.wa-message {
+  max-width: 85%;
+  animation: waBubbleIn 0.3s ease-out both;
+}
+
+.wa-received {
+  align-self: flex-end; // RTL: received messages appear on the right visually
+  background: #202c33;
+  border-radius: 12px 4px 12px 12px;
+  padding: 8px 10px 20px;
+  position: relative;
+
+  body.light-mode & {
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.55;
+    direction: rtl;
+    word-break: break-word;
+
+    body.light-mode & {
+      color: #111;
+    }
+  }
+
+  .wa-time {
+    position: absolute;
+    bottom: 4px;
+    left: 8px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+    white-space: nowrap;
+
+    body.light-mode & {
+      color: rgba(0,0,0,0.35);
+    }
+  }
+}
+
+// ── Typing indicator ──
+.wa-typing-bubble {
+  align-self: flex-end;
+  background: #202c33;
+  border-radius: 12px 4px 12px 12px;
+  padding: 12px 16px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+
+  body.light-mode & {
+    background: #fff;
+  }
+
+  span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    animation: waTypingDot 1.2s infinite ease-in-out;
+
+    body.light-mode & { background: rgba(0,0,0,0.35); }
+
+    &:nth-child(2) { animation-delay: 0.2s; }
+    &:nth-child(3) { animation-delay: 0.4s; }
+  }
+}
+
+// ── Input bar ──
+.wa-input-bar {
+  background: #1f2c34;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+
+  body.light-mode & {
+    background: #f0f0f0;
+  }
+}
+
+.wa-input-field {
+  flex: 1;
+  background: #2a3942;
+  border-radius: 22px;
+  padding: 9px 16px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.3);
+  direction: rtl;
+
+  body.light-mode & {
+    background: #fff;
+    color: rgba(0,0,0,0.3);
+  }
+}
+
+.wa-send-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF1493, #C2185B);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+// ── Animations ──
+@keyframes waBubbleIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes waTypingDot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+  30%            { transform: translateY(-5px); opacity: 1; }
+}
+
+// ── Responsive ──
+@media (max-width: 520px) {
+  .reviews-section { padding: 60px 12px; }
+
+  .reviews-heading h2 { font-size: 28px; }
+
+  .whatsapp-phone {
+    border-radius: 16px;
+    height: 540px;
+  }
+}

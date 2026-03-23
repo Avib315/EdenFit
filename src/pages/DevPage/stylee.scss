@@ -1,0 +1,208 @@
+// ==========================================
+// DEV PAGE STYLES
+// ==========================================
+
+.dev-page {
+  min-height: calc(100vh - 80px);
+  background-color: #f9fafb;
+  padding: 40px 20px;
+}
+
+.dev-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// ========== HEADER ==========
+.dev-header {
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 8px 0;
+  }
+
+  p {
+    font-size: 16px;
+    color: #6b7280;
+    margin: 0;
+  }
+}
+
+// ========== TABS ==========
+.dev-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.dev-tab {
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  transition: all 300ms ease-in-out;
+  margin-bottom: -2px;
+
+  &:hover {
+    color: #2563eb;
+  }
+
+  &.active {
+    color: #2563eb;
+    border-bottom-color: #2563eb;
+  }
+}
+
+// ========== SECTIONS ==========
+.dev-section {
+  background: white;
+  border-radius: 8px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 8px 0;
+  }
+
+  > p {
+    color: #6b7280;
+    margin: 0 0 24px 0;
+    font-size: 14px;
+  }
+
+  &.dev-danger-zone {
+    border: 2px solid #dc2626;
+    background-color: rgba(220, 38, 38, 0.05);
+
+    h2 {
+      color: #dc2626;
+    }
+
+    p {
+      color: #991b1b;
+    }
+  }
+}
+
+// ========== SETTINGS GRID ==========
+.settings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.settings-form {
+  .form {
+    gap: 20px;
+  }
+}
+
+// ========== TOGGLE SETTINGS ==========
+.toggle-settings {
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 20px 0;
+  }
+}
+
+.toggle-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+}
+
+// ========== DEBUG INFO ==========
+.debug-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 16px 0;
+  }
+}
+
+.json-display {
+  background-color: #1f2937;
+  border-radius: 8px;
+  padding: 20px;
+  overflow: auto;
+
+  pre {
+    margin: 0;
+    font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+    font-size: 12px;
+    color: #10b981;
+    line-height: 1.6;
+  }
+}
+
+.table-display {
+  .table-wrapper {
+    border-radius: 8px;
+  }
+}
+
+// ========== ACTION BUTTONS ==========
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  .btn {
+    min-width: 140px;
+  }
+}
+
+// ========== RESPONSIVE ==========
+@media (max-width: 768px) {
+  .dev-page {
+    padding: 24px 12px;
+  }
+
+  .dev-container {
+    padding: 0;
+  }
+
+  .dev-section {
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+
+  .dev-header h1 {
+    font-size: 24px;
+  }
+
+  .settings-grid,
+  .debug-info {
+    grid-template-columns: 1fr;
+  }
+}

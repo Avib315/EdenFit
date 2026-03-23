@@ -1,0 +1,260 @@
+// ==========================================
+// HERO SECTION - EDENFIT
+// ==========================================
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  // Desktop: gradient bg (video lives inside phone frame)
+  background: linear-gradient(135deg, #0A0A0A 0%, #1C1C1C 50%, #0A0A0A 100%);
+
+  body.light-mode & {
+    background: linear-gradient(135deg, #fff0f6 0%, #ffe4f0 50%, #fff0f6 100%);
+  }
+}
+
+// ── Mobile-only full-screen video background ──
+.hero-video-bg {
+  display: none; // hidden on desktop, shown on mobile via media query
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(13, 13, 13, 0.55) 0%,
+      rgba(13, 13, 13, 0.30) 50%,
+      rgba(13, 13, 13, 0.75) 100%
+    );
+  }
+}
+
+// ── Desktop two-column inner layout ──
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 48px 80px;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+// ── Text content ──
+.hero-content {
+  flex: 1;
+  min-width: 0;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-title {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  margin: 0 0 20px 0;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5C6D6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  body.light-mode & {
+    background: linear-gradient(135deg, #0A0A0A 0%, #FF1493 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 40px 0;
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 480px;
+
+  body.light-mode & {
+    color: rgba(26, 26, 46, 0.65);
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  .btn {
+    padding: 16px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    &.btn-primary {
+      background: linear-gradient(135deg, #FF1493 0%, #C2185B 100%);
+      color: #FFFFFF;
+      border: none;
+      box-shadow: 0 8px 24px rgba(255, 20, 147, 0.45), 0 0 0 0 rgba(255, 20, 147, 0);
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 36px rgba(255, 20, 147, 0.55), 0 0 30px rgba(255, 20, 147, 0.25);
+      }
+    }
+
+    &.btn-secondary {
+      background: transparent;
+      color: #FF1493;
+      border: 2px solid #FF1493;
+
+      &:hover {
+        background: rgba(255, 20, 147, 0.12);
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
+
+// ── Desktop phone frame ──
+.hero-phone-panel {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-phone-frame {
+  width: 270px;
+  height: 540px;
+  border-radius: 40px;
+  overflow: hidden;
+  border: 8px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  position: relative;
+  animation: floatPhone 4s ease-in-out infinite;
+
+  body.light-mode & {
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// ── Animations ──
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatPhone {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+// ==========================================
+// RESPONSIVE
+// ==========================================
+
+// Tablet: tighten spacing
+@media (max-width: 1024px) {
+  .hero-inner {
+    gap: 40px;
+    padding: 120px 32px 60px;
+  }
+
+  .hero-title {
+    font-size: 44px;
+  }
+
+  .hero-phone-frame {
+    width: 230px;
+    height: 460px;
+  }
+}
+
+// Mobile: switch to full-screen video background
+@media (max-width: 768px) {
+  .hero {
+    background: none; // let the video show through
+    min-height: 100vh;
+  }
+
+  .hero-video-bg {
+    display: block; // show video background on mobile
+  }
+
+  .hero-phone-panel {
+    display: none; // hide phone frame on mobile
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    padding: 100px 20px 60px;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 34px;
+    letter-spacing: -0.5px;
+    // always white on mobile (over dark video overlay)
+    background: linear-gradient(135deg, #FFFFFF 0%, #F5C6D6 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+  }
+
+  .hero-subtitle {
+    font-size: 17px;
+    margin-bottom: 32px;
+    max-width: 100%;
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+
+    .btn {
+      flex: 1;
+      min-width: 140px;
+      padding: 14px 24px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+  }
+}

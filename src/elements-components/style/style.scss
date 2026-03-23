@@ -1,0 +1,714 @@
+// ==========================================
+// ELEMENT COMPONENTS - GLOBAL STYLES
+// ==========================================
+// This file contains all styles for generic, reusable components
+// Can be imported and used as a template for future projects
+
+// ==========================================
+// VARIABLES & MIXINS
+// ==========================================
+
+// Color Palette
+$colors: (
+  primary: #2563eb,
+  secondary: #64748b,
+  tertiary: #e2e8f0,
+  danger: #dc2626,
+  success: #16a34a,
+  warning: #ea580c,
+  info: #0891b2,
+  white: #ffffff,
+  black: #000000,
+  light-gray: #f1f5f9,
+  dark-gray: #475569,
+);
+
+// Size Scale
+$sizes: (
+  small: 8px,
+  medium: 16px,
+  large: 24px,
+  xl: 32px,
+);
+
+// Font Sizes
+$font-sizes: (
+  xs: 12px,
+  sm: 14px,
+  base: 16px,
+  lg: 18px,
+  xl: 20px,
+  2xl: 24px,
+);
+
+// Border Radius
+$border-radius: (
+  none: 0,
+  sm: 4px,
+  md: 8px,
+  lg: 16px,
+  full: 9999px,
+);
+
+// Shadows
+$shadows: (
+  sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05),
+  md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+);
+
+// Transitions
+$transition-fast: 150ms ease-in-out;
+$transition-normal: 300ms ease-in-out;
+$transition-slow: 500ms ease-in-out;
+
+// ==========================================
+// HELPER MIXINS
+// ==========================================
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin transition($properties: all) {
+  transition: $properties $transition-normal;
+}
+
+@mixin button-reset {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+@mixin input-reset {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == "mobile" {
+    @media (max-width: 640px) {
+      @content;
+    }
+  } @else if $breakpoint == "tablet" {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == "desktop" {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  }
+}
+
+// ==========================================
+// BUTTON COMPONENT STYLES
+// ==========================================
+
+.btn {
+  @include button-reset;
+  @include flex-center;
+  gap: map-get($sizes, medium);
+  font-weight: 600;
+  border-radius: map-get($border-radius, md);
+  @include transition(all);
+  white-space: nowrap;
+  user-select: none;
+
+  // Size variations
+  &.btn-small {
+    padding: map-get($sizes, small) map-get($sizes, medium);
+    font-size: map-get($font-sizes, sm);
+    min-height: 32px;
+  }
+
+  &.btn-medium {
+    padding: map-get($sizes, medium) map-get($sizes, large);
+    font-size: map-get($font-sizes, base);
+    min-height: 40px;
+  }
+
+  &.btn-large {
+    padding: map-get($sizes, large) map-get($sizes, xl);
+    font-size: map-get($font-sizes, lg);
+    min-height: 48px;
+  }
+
+  // Variant styles
+  &.btn-primary {
+    background-color: map-get($colors, primary);
+    color: map-get($colors, white);
+
+    &:hover:not(&:disabled) {
+      background-color: darken(map-get($colors, primary), 10%);
+      box-shadow: map-get($shadows, md);
+    }
+
+    &:active:not(&:disabled) {
+      background-color: darken(map-get($colors, primary), 15%);
+    }
+  }
+
+  &.btn-secondary {
+    background-color: map-get($colors, secondary);
+    color: map-get($colors, white);
+
+    &:hover:not(&:disabled) {
+      background-color: darken(map-get($colors, secondary), 10%);
+      box-shadow: map-get($shadows, md);
+    }
+  }
+
+  &.btn-tertiary {
+    background-color: map-get($colors, tertiary);
+    color: map-get($colors, black);
+
+    &:hover:not(&:disabled) {
+      background-color: darken(map-get($colors, tertiary), 5%);
+    }
+  }
+
+  &.btn-danger {
+    background-color: map-get($colors, danger);
+    color: map-get($colors, white);
+
+    &:hover:not(&:disabled) {
+      background-color: darken(map-get($colors, danger), 10%);
+    }
+  }
+
+  &.btn-success {
+    background-color: map-get($colors, success);
+    color: map-get($colors, white);
+
+    &:hover:not(&:disabled) {
+      background-color: darken(map-get($colors, success), 10%);
+    }
+  }
+
+  // Disabled state
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  // Loading state
+  &.btn-loading {
+    position: relative;
+    color: transparent;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin $transition-normal linear infinite;
+    }
+  }
+
+  // Full width
+  &.btn-fullwidth {
+    width: 100%;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// ==========================================
+// INPUT COMPONENT STYLES
+// ==========================================
+
+.input-wrapper {
+  @include flex-col;
+  gap: 6px;
+  width: 100%;
+}
+
+.input-label {
+  font-size: map-get($font-sizes, sm);
+  font-weight: 600;
+  color: map-get($colors, dark-gray);
+}
+
+.input-field {
+  position: relative;
+  @include flex-center;
+}
+
+.input {
+  @include input-reset;
+  width: 100%;
+  padding: map-get($sizes, medium);
+  border: 2px solid map-get($colors, tertiary);
+  border-radius: map-get($border-radius, md);
+  font-size: map-get($font-sizes, base);
+  @include transition(all);
+  background-color: map-get($colors, white);
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+
+  &:focus {
+    border-color: map-get($colors, primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+
+  &:disabled {
+    background-color: map-get($colors, light-gray);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  // Size variations
+  &.input-small {
+    padding: map-get($sizes, small) map-get($sizes, medium);
+    font-size: map-get($font-sizes, sm);
+  }
+
+  &.input-large {
+    padding: map-get($sizes, large) map-get($sizes, medium);
+    font-size: map-get($font-sizes, lg);
+  }
+
+  // Variant: filled
+  &.input-filled {
+    border: none;
+    background-color: map-get($colors, light-gray);
+
+    &:focus {
+      background-color: darken(map-get($colors, light-gray), 5%);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+  }
+
+  // Error state
+  &.input-error {
+    border-color: map-get($colors, danger);
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+    }
+  }
+}
+
+.input-icon {
+  position: absolute;
+  @include flex-center;
+  color: map-get($colors, secondary);
+  font-size: map-get($font-sizes, lg);
+
+  &.input-icon-left {
+    left: map-get($sizes, medium);
+  }
+
+  &.input-icon-right {
+    right: map-get($sizes, medium);
+  }
+}
+
+.input-error-message {
+  font-size: map-get($font-sizes, xs);
+  color: map-get($colors, danger);
+}
+
+// ==========================================
+// FORM COMPONENT STYLES
+// ==========================================
+
+.form {
+  @include flex-col;
+  gap: map-get($sizes, large);
+  width: 100%;
+}
+
+.form-group {
+  @include flex-col;
+  gap: map-get($sizes, medium);
+}
+
+.form-actions {
+  @include flex-between;
+  gap: map-get($sizes, medium);
+  padding-top: map-get($sizes, large);
+  border-top: 1px solid map-get($colors, tertiary);
+
+  @include responsive("mobile") {
+    flex-direction: column;
+  }
+}
+
+// ==========================================
+// LIST COMPONENT STYLES
+// ==========================================
+
+.list {
+  @include flex-col;
+  gap: 0;
+  border: 1px solid map-get($colors, tertiary);
+  border-radius: map-get($border-radius, md);
+  overflow: hidden;
+  background-color: map-get($colors, white);
+}
+
+.list-item {
+  @include flex-between;
+  padding: map-get($sizes, medium) map-get($sizes, large);
+  border-bottom: 1px solid map-get($colors, tertiary);
+  cursor: pointer;
+  @include transition(all);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: map-get($colors, light-gray);
+  }
+
+  &.list-item-selected {
+    background-color: rgba(37, 99, 235, 0.05);
+    border-left: 4px solid map-get($colors, primary);
+    padding-left: calc(map-get($sizes, large) - 4px);
+  }
+}
+
+.list-item-content {
+  @include flex-col;
+  gap: 4px;
+  flex: 1;
+}
+
+.list-item-label {
+  font-weight: 600;
+  color: map-get($colors, black);
+  font-size: map-get($font-sizes, base);
+}
+
+.list-item-description {
+  font-size: map-get($font-sizes, sm);
+  color: map-get($colors, secondary);
+}
+
+.list-item-icon {
+  margin-right: map-get($sizes, medium);
+  color: map-get($colors, primary);
+  font-size: map-get($font-sizes, lg);
+}
+
+// ==========================================
+// TABLE COMPONENT STYLES
+// ==========================================
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: map-get($border-radius, md);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: map-get($colors, white);
+  box-shadow: map-get($shadows, sm);
+
+  &.table-striped tbody tr:nth-child(odd) {
+    background-color: map-get($colors, light-gray);
+  }
+
+  &.table-hover tbody tr:hover {
+    background-color: rgba(37, 99, 235, 0.05);
+    cursor: pointer;
+  }
+}
+
+.table-head {
+  background-color: map-get($colors, tertiary);
+  border-bottom: 2px solid map-get($colors, secondary);
+}
+
+.table-header {
+  padding: map-get($sizes, medium) map-get($sizes, large);
+  text-align: left;
+  font-weight: 700;
+  color: map-get($colors, dark-gray);
+  font-size: map-get($font-sizes, sm);
+  user-select: none;
+
+  &.sortable {
+    cursor: pointer;
+    @include transition(all);
+
+    &:hover {
+      background-color: darken(map-get($colors, tertiary), 5%);
+    }
+  }
+}
+
+.table-cell {
+  padding: map-get($sizes, medium) map-get($sizes, large);
+  border-bottom: 1px solid map-get($colors, tertiary);
+  font-size: map-get($font-sizes, base);
+  color: map-get($colors, dark-gray);
+}
+
+.table-row {
+  @include transition(all);
+
+  &:last-child .table-cell {
+    border-bottom: none;
+  }
+}
+
+// ==========================================
+// POPUP/MODAL COMPONENT STYLES
+// ==========================================
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  @include flex-center;
+  z-index: 1000;
+  animation: fadeIn $transition-fast;
+}
+
+.popup {
+  background-color: map-get($colors, white);
+  border-radius: map-get($border-radius, lg);
+  box-shadow: map-get($shadows, xl);
+  animation: slideUp $transition-normal;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  &.popup-small {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  &.popup-medium {
+    width: 90%;
+    max-width: 600px;
+  }
+
+  &.popup-large {
+    width: 90%;
+    max-width: 800px;
+  }
+}
+
+.popup-header {
+  padding: map-get($sizes, large);
+  border-bottom: 1px solid map-get($colors, tertiary);
+  @include flex-between;
+}
+
+.popup-title {
+  font-size: map-get($font-sizes, xl);
+  font-weight: 700;
+  color: map-get($colors, black);
+  margin: 0;
+}
+
+.popup-close {
+  @include button-reset;
+  font-size: map-get($font-sizes, xl);
+  cursor: pointer;
+  color: map-get($colors, secondary);
+  @include transition(all);
+
+  &:hover {
+    color: map-get($colors, black);
+  }
+}
+
+.popup-content {
+  padding: map-get($sizes, large);
+  color: map-get($colors, dark-gray);
+}
+
+.popup-footer {
+  padding: map-get($sizes, large);
+  border-top: 1px solid map-get($colors, tertiary);
+  @include flex-between;
+  gap: map-get($sizes, medium);
+
+  @include responsive("mobile") {
+    flex-direction: column-reverse;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// ==========================================
+// TOGGLE BUTTON COMPONENT STYLES
+// ==========================================
+
+.toggle-wrapper {
+  @include flex-col;
+  gap: 6px;
+}
+
+.toggle-label {
+  font-size: map-get($font-sizes, sm);
+  font-weight: 600;
+  color: map-get($colors, dark-gray);
+}
+
+.toggle-switch {
+  @include flex-between;
+  gap: map-get($sizes, medium);
+  align-items: center;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-button {
+  position: relative;
+  width: 50px;
+  height: 28px;
+  background-color: map-get($colors, tertiary);
+  border-radius: map-get($border-radius, full);
+  cursor: pointer;
+  @include transition(all);
+  border: none;
+  padding: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: map-get($colors, white);
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    @include transition(all);
+    box-shadow: map-get($shadows, sm);
+  }
+
+  &.toggle-on {
+    background-color: map-get($colors, primary);
+
+    &::after {
+      left: 24px;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  // Size variations
+  &.toggle-small {
+    width: 40px;
+    height: 22px;
+
+    &::after {
+      width: 18px;
+      height: 18px;
+      top: 2px;
+      left: 2px;
+    }
+
+    &.toggle-on::after {
+      left: 18px;
+    }
+  }
+
+  &.toggle-large {
+    width: 60px;
+    height: 34px;
+
+    &::after {
+      width: 30px;
+      height: 30px;
+      top: 2px;
+      left: 2px;
+    }
+
+    &.toggle-on::after {
+      left: 28px;
+    }
+  }
+}
+
+// ==========================================
+// RESPONSIVE ADJUSTMENTS
+// ==========================================
+
+@include responsive("mobile") {
+  .btn-medium,
+  .btn-large {
+    padding: map-get($sizes, medium);
+    min-height: 40px;
+  }
+
+  .input {
+    padding: map-get($sizes, medium);
+  }
+
+  .table {
+    font-size: map-get($font-sizes, sm);
+  }
+
+  .table-header,
+  .table-cell {
+    padding: map-get($sizes, small) map-get($sizes, medium);
+  }
+}
