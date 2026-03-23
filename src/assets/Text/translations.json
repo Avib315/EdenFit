@@ -10,8 +10,8 @@
       }
     },
     "hero": {
-      "title": "Boutique Studio for Women Only",
-      "subtitle": "💪 Strength training to sculpt and tone\n🔥 Cardio workouts\n🥊 Muay Thai training\n👯‍♀️ Small groups with personal guidance every step of the way\n💃 Unmatched energy and atmosphere\n🩷 A process that transforms not just your body, but your confidence and mindset",
+      "title": "Stronger Body. Stronger Mind. Stronger You.",
+      "subtitle": "Boutique Studio for Women Only",
       "buttons": {
         "getStarted": "Get Started",
         "learnMore": "Learn More"
@@ -50,8 +50,8 @@
     },
     "about": {
       "title": "About EdenFit",
-      "text1": "At EdenFit, we believe that fitness is not just about building a perfect body. It's about creating a community where you feel supported, motivated, and empowered to achieve your goals.",
-      "text2": "Our state-of-the-art facilities, expert trainers, and supportive community make EdenFit the perfect place to start or continue your fitness journey.",
+      "text1": "Boutique studio for women only.",
+      "text2": "💪 Strength training to sculpt and tone\n🔥 Cardio workouts\n🥊 Muay Thai training\n👯‍♀️ Small groups with close personal guidance – all the way to your results\n💃 Energy and atmosphere you won’t find anywhere else\n🩷 A process that transforms not just your body, but also your confidence and mindset",
       "stats": [
         { "number": "500+", "label": "Active Members" },
         { "number": "50+", "label": "Classes per Week" },
@@ -94,8 +94,8 @@
       }
     },
     "hero": {
-      "title": "סטודיו בוטיק לנשים בלבד",
-      "subtitle": "💪 אימוני כוח לנשים שמחטבים ומעצבים\n🔥 אימוני אירובי\n🥊 אימוני איגרוף תאילנדי\n👯‍♀️ קבוצות קטנות עם ליווי אישי וצמוד – כל הדרך לתוצאה\n💃 אווירה ואנרגיות שלא תמצאי בשום מקום אחר\n🩷 תהליך שהוא הרבה מעבר לגוף – גם לנפש, לדימוי העצמי ולביטחון שלך",
+  "title": "העצימי את הגוף – חזקי את הנפש",
+      "subtitle": "סטודיו בוטיק לנשים בלבד",
       "buttons": {
         "getStarted": "התחילי עכשיו",
         "learnMore": "למדי עוד"
@@ -134,8 +134,8 @@
     },
     "about": {
       "title": "אודות EdenFit",
-      "text1": "ב-EdenFit אנחנו מאמינות שכושר גופני הוא לא רק בניית גוף מושלם, אלא גם בניית קהילה שבה את מרגישה נתמכת, מלאת מוטיבציה ומועצמת להשיג את יעדייך.",
-      "text2": "המתקנים המתקדמים שלנו, המדריכות המקצועיות והקהילה התומכת הופכים את EdenFit למקום המושלם להתחיל או להמשיך את מסע הכושר שלך.",
+      "text1": "סטודיו בוטיק לנשים בלבד.",
+      "text2": "💪 אימוני כוח לנשים שמחטבים ומעצבים\n🔥 אימוני אירובי\n🥊 אימוני איגרוף תאילנדי\n👯‍♀️ קבוצות קטנות עם ליווי אישי וצמוד – כל הדרך לתוצאה\n💃 אווירה ואנרגיות שלא תמצאי בשום מקום אחר\n🩷 תהליך שהוא הרבה מעבר לגוף – גם לנפש, לדימוי העצמי ולביטחון שלך",
       "stats": [
         { "number": "500+", "label": "חברות פעילות" },
         { "number": "50+", "label": "שיעורים בשבוע" },
