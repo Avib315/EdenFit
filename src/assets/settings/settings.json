@@ -1,24 +1,74 @@
 {
+  "site": {
+    "name": "Eden's Fit",
+    "subtitle": "סטודיו לנשים ונערות | ראשון לציון מערב",
+    "navigation": {
+      "home": "בית",
+      "services": "שירותים ומחירים",
+      "contact": "צור קשר",
+      "privacy": "מדיניות פרטיות",
+      "accessibility": "הצהרת נגישות"
+    }
+  },
+
   "contact": {
-    "phone": "+972-50-000-0000",
+    "phone": "+972-52-611-1272",
     "email": "info@edenfit.co.il",
-    "whatsapp": "+972500000000",
-    "address": "תל אביב, ישראל"
+    "whatsapp": "+972-52-611-1272",
+    "address": "ראשון לציון מערב, ישראל"
   },
 
   "social": [
     { "platform": "Instagram", "icon": "instagram", "url": "https://instagram.com/edenfit", "label": "אינסטגרם" },
     { "platform": "Facebook",  "icon": "facebook",  "url": "https://facebook.com/edenfit", "label": "פייסבוק" },
     { "platform": "TikTok",    "icon": "tiktok",    "url": "https://tiktok.com/@edenfit", "label": "טיקטוק" },
-    { "platform": "WhatsApp",  "icon": "whatsapp",  "url": "https://wa.me/972500000000",  "label": "וואטסאפ" },
+    { "platform": "WhatsApp",  "icon": "whatsapp",  "url": "https://wa.me/972526111272",  "label": "וואטסאפ" },
     { "platform": "YouTube",   "icon": "youtube",   "url": "https://youtube.com/@edenfit", "label": "יוטיוב" }
   ],
 
+  "services": [
+    {
+      "id": 1,
+      "title": "ליווי אישי בסטודיו",
+      "description": "אימונים אחד על אחת, מעקב מקצועי, התאמות שוטפות ושיח ישיר כדי שכל מפגש יקדם אותך בדיוק למקום הנכון."
+    },
+    {
+      "id": 2,
+      "title": "קבוצות בוטיק קטנות",
+      "description": "מסגרת אנרגטית ואינטימית לנשים שמחפשות יחס אישי, דיוק בתרגול ואווירה שמייצרת התמדה."
+    },
+    {
+      "id": 3,
+      "title": "שגרות אונליין משלימות",
+      "description": "תמיכה דיגיטלית בין אימונים כדי לשמור על קצב, רצף והתקדמות גם בימים שבהם את לא מגיעה לסטודיו."
+    }
+  ],
+
   "videos": [],
-  "services": [],
-  "reviews": [],
-  "stats": [],
-  "clientTypes": [],
+
+  "reviews": [
+    {
+      "name": "שיר",
+      "text": "הסטודיו הכי מקצועי שהייתי בו! יחס אישי ותוצאות מדהימות."
+    },
+    {
+      "name": "נועה",
+      "text": "האווירה מדהימה והמאמנות פשוט אלופות. ממליצה בחום!"
+    }
+  ],
+
+  "stats": [
+    { "number": "300+", "label": "מתאמנות מרוצות" },
+    { "number": "20+", "label": "שיעורים בשבוע" },
+    { "number": "5+", "label": "מאמנות מקצועיות" }
+  ],
+
+  "clientTypes": [
+    "נשים שמתחילות את הדרך בכושר",
+    "מתאמנות מתקדמות שרוצות תוצאות",
+    "נערות שמחפשות מסגרת תומכת",
+    "נשים אחרי לידה"
+  ],
 
   "features": {
     "darkModeDefault": true,
