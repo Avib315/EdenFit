@@ -76,6 +76,29 @@
         }
       ]
     },
+    "transformations": {
+      "title": "Real Transformations",
+      "subtitle": "See the amazing results our members have achieved",
+      "buttonLabel": "View Stories",
+      "items": [
+        {
+          "name": "Sarah",
+          "duration": "3 months"
+        },
+        {
+          "name": "Jessica",
+          "duration": "4 months"
+        },
+        {
+          "name": "Emma",
+          "duration": "5 months"
+        },
+        {
+          "name": "Rachel",
+          "duration": "3 months"
+        }
+      ]
+    },
     "cta": {
       "title": "Ready to Transform Your Life?",
       "subtitle": "Join EdenFit today and get a FREE personal training session",
@@ -118,8 +141,8 @@
           "level": "מתקדמות"
         },
         {
-          "name": "יוגה וגמישות",
-          "description": "שפרי את הגמישות, האיזון והבהירות הנפשית",
+          "name": "איגרוף תאילנדי",
+          "description": "אימון איגרוף תאילנדי לשיפור הכושר הגופני והנפשי",
           "duration": "50 דק",
           "level": "כל הרמות"
         },
@@ -160,10 +183,45 @@
         }
       ]
     },
+    "transformations": {
+      "title": "התוצאות האמיתיות של המתאמנות שלנו",
+      "subtitle": "ראי את התוצאות המדהימות שחברותינו הגיעו אליהן",
+      "buttonLabel": "קראי את הסיפורים",
+      "items": [
+        {
+          "name": "אורית",
+          "duration": "3 חודשים"
+        },
+        {
+          "name": "גלית",
+          "duration": "4 חודשים"
+        },
+        {
+          "name": "שיר",
+          "duration": "5 חודשים"
+        },
+        {
+          "name": "דניאל",
+          "duration": "3 חודשים"
+        }
+      ]
+    },
     "cta": {
       "title": "מוכנה לשנות את החיים שלך?",
       "subtitle": "הצטרפי ל-EdenFit היום וקבלי הדרכה אישית חינם",
       "button": "התחילי את המסע שלך"
+    },
+  "contact": {
+    "title": "נשמח לשמוע ממך",
+    "subtitle": "צרי קשר עוד היום",
+    "directContact": {
+      "title": "צרי קשר ישיר",
+      "whatsappLabel": "שלחי לנו הודעה"
+    },
+    "followUs": {
+      "title": "עקבי אחרינו"
     }
+    
+}
   }
 }

@@ -1,6 +1,7 @@
 import Hero from '../../component/Hero/Hero';
 import Classes from '../../component/Classes/Classes';
 import About from '../../component/About/About';
+import Transformations from '../../component/Transformations/Transformations';
 import Reviews from '../../component/Reviews/Reviews';
 import ContactUs from '../../component/ContactUs/ContactUs';
 
@@ -10,6 +11,7 @@ export default function HomePage() {
       <Hero />
       <Classes />
       <About />
+      <Transformations />
       <Reviews />
       <ContactUs />
     </div>

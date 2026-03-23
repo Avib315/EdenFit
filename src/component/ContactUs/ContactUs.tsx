@@ -1,4 +1,6 @@
 import { Instagram, Facebook, Youtube, Phone, Mail, MessageCircle, MapPin } from 'lucide-react';
+import { useTranslationStore } from '../../stores/useTranslationStore';
+import translations from '../../assets/Translaions/translations.json';
 import settings from '../../assets/settings/settings.json';
 import './ContactUs.scss';
 
@@ -29,28 +31,32 @@ const ICON_MAP: Record<string, React.ReactNode> = {
 };
 
 const BRAND_COLORS: Record<string, string> = {
-  instagram: '#E1306C',
-  facebook:  '#1877F2',
-  tiktok:    '#010101',
-  whatsapp:  '#25D366',
-  youtube:   '#FF0000',
+  instagram: '#E8A0BF',
+  facebook:  '#E8A0BF',
+  tiktok:    '#E8A0BF',
+  whatsapp:  '#E8A0BF',
+  youtube:   '#E8A0BF',
 };
 
 export default function ContactUs() {
+  const getText     = useTranslationStore(s => s.getText);
+  const currentLang = useTranslationStore(s => s.currentLang);
+  const isHebrew    = useTranslationStore(s => s.isHebrew);
+  const langData    = (translations as any)[currentLang];
   const { contact, social } = settings;
 
   return (
-    <section id="contact" className="contact-section" dir="rtl">
+    <section id="contact" className="contact-section" dir={isHebrew ? 'rtl' : 'ltr'}>
       <div className="contact-container">
         <div className="contact-heading">
-          <h2>צרי קשר</h2>
-          <p>נשמח לשמוע ממך — בחרי את הדרך המועדפת עלייך</p>
+          <h2>{getText('contact.title')} </h2>
+          <p>{getText('contact.subtitle')}</p>
         </div>
 
         <div className="contact-grid">
           {/* Direct contact */}
           <div className="contact-card">
-            <h3>יצירת קשר ישיר</h3>
+            <h3>{getText('contact.directContact.title')}</h3>
 
             <a href={`tel:${contact.phone}`} className="contact-item">
               <span className="contact-icon contact-icon--phone"><Phone size={20} /></span>
@@ -64,7 +70,7 @@ export default function ContactUs() {
 
             <a href={`https://wa.me/${contact.whatsapp}`} target="_blank" rel="noopener noreferrer" className="contact-item">
               <span className="contact-icon contact-icon--whatsapp"><MessageCircle size={20} /></span>
-              <span>שלחי הודעה בוואטסאפ</span>
+              <span>{getText('contact.directContact.whatsappLabel')}</span>
             </a>
 
             <div className="contact-item contact-item--static">
@@ -75,7 +81,7 @@ export default function ContactUs() {
 
           {/* Social media */}
           <div className="contact-card">
-            <h3>עקבי אחרינו</h3>
+            <h3>{getText('contact.followUs.title')}</h3>
             <div className="social-grid">
               {social.map(item => (
                 <a

@@ -1,0 +1,190 @@
+{
+  "en": {
+    "header": {
+      "brand": "🏋️ EdenFit",
+      "nav": {
+        "home": "Home",
+        "classes": "Classes",
+        "about": "About",
+        "joinNow": "Join Now"
+      }
+    },
+    "hero": {
+      "title": "Transform Your Body, Elevate Your Mind",
+      "subtitle": "Join EdenFit and become the best version of yourself",
+      "buttons": {
+        "getStarted": "Get Started",
+        "learnMore": "Learn More"
+      }
+    },
+    "classes": {
+      "title": "Our Classes",
+      "description": "Choose from a variety of classes designed to achieve your fitness goals",
+      "items": [
+        {
+          "name": "Strength Training",
+          "description": "Build muscle and increase your power with our professional trainers",
+          "duration": "60 min",
+          "level": "All Levels"
+        },
+        {
+          "name": "HIIT Cardio",
+          "description": "High-intensity interval training for maximum calorie burn",
+          "duration": "45 min",
+          "level": "Advanced"
+        },
+        {
+          "name": "Yoga & Flexibility",
+          "description": "Improve flexibility, balance, and mental clarity",
+          "duration": "50 min",
+          "level": "All Levels"
+        },
+        {
+          "name": "Functional Training",
+          "description": "Improve your functional fitness with real-world exercises",
+          "duration": "55 min",
+          "level": "Intermediate"
+        }
+      ],
+      "bookNow": "Book Now"
+    },
+    "about": {
+      "title": "About EdenFit",
+      "text1": "At EdenFit, we believe that fitness is not just about building a perfect body. It's about creating a community where you feel supported, motivated, and empowered to achieve your goals.",
+      "text2": "Our state-of-the-art facilities, expert trainers, and supportive community make EdenFit the perfect place to start or continue your fitness journey.",
+      "stats": [
+        { "number": "500+", "label": "Active Members" },
+        { "number": "50+", "label": "Classes per Week" },
+        { "number": "10+", "label": "Expert Trainers" }
+      ],
+      "features": [
+        {
+          "title": "Modern Equipment",
+          "description": "State-of-the-art fitness equipment"
+        },
+        {
+          "title": "Expert Trainers",
+          "description": "Certified professionals to guide you"
+        },
+        {
+          "title": "Personalized Plans",
+          "description": "Customized workout plans for you"
+        },
+        {
+          "title": "Supportive Community",
+          "description": "Join a group of fitness enthusiasts"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Transform Your Life?",
+      "subtitle": "Join EdenFit today and get a FREE personal training session",
+      "button": "Start Your Journey"
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "subtitle": "We're here to help — reach out using your preferred method",
+      "directContact": {
+        "title": "Contact Us",
+        "whatsappLabel": "Message on WhatsApp"
+      },
+      "followUs": {
+        "title": "Follow Us"
+      }
+    }
+  },
+  "he": {
+    "header": {
+      "brand": "🏋️ EdenFit",
+      "nav": {
+        "home": "בית",
+        "classes": "השיעורים",
+        "about": "אודות",
+        "joinNow": "הצטרפו עכשיו"
+      }
+    },
+    "hero": {
+      "title": "שנה את הגוף שלך, הרים את הנפש",
+      "subtitle": "הצטרף ל-EdenFit והפוך להיות הגרסה הטובה ביותר של עצמך",
+      "buttons": {
+        "getStarted": "התחל עכשיו",
+        "learnMore": "למדו עוד"
+      }
+    },
+    "classes": {
+      "title": "השיעורים שלנו",
+      "description": "בחר מבחירה של שיעורים שנועדו להשגת יעדי הכושר שלך",
+      "items": [
+        {
+          "name": "אימון כוח",
+          "description": "בנה שריר והגביר את הכוח שלך עם מדריכים מקצועיים",
+          "duration": "60 דק",
+          "level": "כל הרמות"
+        },
+        {
+          "name": "HIIT קרדיו",
+          "description": "אימון מרווחים בעוצמה גבוהה לשריפת קלוריות מקסימלית",
+          "duration": "45 דק",
+          "level": "מתקדם"
+        },
+        {
+          "name": "יוגה וגמישות",
+          "description": "שפר את הגמישות, האיזון וההבהרה הנפשית",
+          "duration": "50 דק",
+          "level": "כל הרמות"
+        },
+        {
+          "name": "אימון פונקציונלי",
+          "description": "שפר את הכושר הפונקציונלי שלך באמצעות תרגילים בעולם האמת",
+          "duration": "55 דק",
+          "level": "בינוני"
+        }
+      ],
+      "bookNow": "הזמן עכשיו"
+    },
+    "about": {
+      "title": "אודות EdenFit",
+      "text1": "ב-EdenFit, אנחנו מאמינים שכושר גופני הוא לא רק בנייה של גוף מושלם. זה בנייה של קהילה בה אתה מרגיש בתמיכה, במוטיבציה ומאומץ להשיג את יעדיך.",
+      "text2": "המתקנים המודרניים שלנו, המדריכים המומחים והקהילה התומכת שלנו הופכים את EdenFit למקום המושלם להתחיל או להמשיך את המסע בכושר הגוף שלך.",
+      "stats": [
+        { "number": "500+", "label": "חברים פעילים" },
+        { "number": "50+", "label": "שיעורים בשבוע" },
+        { "number": "10+", "label": "מדריכים מומחים" }
+      ],
+      "features": [
+        {
+          "title": "ציוד מודרני",
+          "description": "ציוד כושר גוף בחזית הטכנולוגיה"
+        },
+        {
+          "title": "מדריכים מומחים",
+          "description": "אנשי מקצוע מוסמכים שיוביל אותך"
+        },
+        {
+          "title": "תכניות מותאמות",
+          "description": "תוכניות אימון מותאמות אישית עבורך"
+        },
+        {
+          "title": "קהילה תומכת",
+          "description": "הצטרף לקבוצה של חובבי כושר"
+        }
+      ]
+    },
+    "cta": {
+      "title": "מוכן לשנות את החיים שלך?",
+      "subtitle": "הצטרף ל-EdenFit היום וקבל הדרכה אישית חינם",
+      "button": "התחל את המסע שלך"
+    },
+    "contact": {
+      "title": "צרי קשר",
+      "subtitle": "נשמח לשמוע ממך — בחרי את הדרך המועדפת עלייך",
+      "directContact": {
+        "title": "יצירת קשר ישיר",
+        "whatsappLabel": "שלחי הודעה בוואטסאפ"
+      },
+      "followUs": {
+        "title": "עקבי אחרינו"
+      }
+    }
+  }
+}
