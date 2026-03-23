@@ -2,19 +2,13 @@
   "site": {
     "name": "Eden's Fit",
     "subtitle": "סטודיו לנשים ונערות | ראשון לציון מערב",
-    "navigation": {
-      "home": "בית",
-      "services": "שירותים ומחירים",
-      "contact": "צור קשר",
-      "privacy": "מדיניות פרטיות",
-      "accessibility": "הצהרת נגישות"
-    }
+    "description": "סטודיו בוטיק לנשים בלבד.\n\nמה תקבלי אצלנו?\n💪 אימוני כוח לנשים שמחטבים ומעצבים\n🔥 אימוני אירובי\n🥊 אימוני איגרוף תאילנדי\n👯‍♀️ קבוצות קטנות, ליווי אישי וצמוד – כל הדרך לתוצאה\n💃 אווירה ואנרגיות שלא תמצאי בשום מקום אחר\n🩷 תהליך שהוא הרבה מעבר לגוף – גם לנפש, לדימוי העצמי ולביטחון שלך"
   },
 
   "contact": {
-    "phone": "+972-52-611-1272",
-    "email": "info@edenfit.co.il",
-    "whatsapp": "+972-52-611-1272",
+    "phone": "+972-52-611-1274",
+    "email": "silvaseden00@gmail.com",
+    "whatsapp": "+972-52-611-1274",
     "address": "ראשון לציון מערב, ישראל"
   },
 
@@ -22,7 +16,7 @@
     { "platform": "Instagram", "icon": "instagram", "url": "https://instagram.com/edenfit", "label": "אינסטגרם" },
     { "platform": "Facebook",  "icon": "facebook",  "url": "https://facebook.com/edenfit", "label": "פייסבוק" },
     { "platform": "TikTok",    "icon": "tiktok",    "url": "https://tiktok.com/@edenfit", "label": "טיקטוק" },
-    { "platform": "WhatsApp",  "icon": "whatsapp",  "url": "https://wa.me/972526111272",  "label": "וואטסאפ" },
+    { "platform": "WhatsApp",  "icon": "whatsapp",  "url": "https://wa.me/972500000000",  "label": "וואטסאפ" },
     { "platform": "YouTube",   "icon": "youtube",   "url": "https://youtube.com/@edenfit", "label": "יוטיוב" }
   ],
 
